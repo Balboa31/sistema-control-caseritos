@@ -1,36 +1,3 @@
-
-Sobre control de ventas e inventario
-
-¿Llevas un registro de tus ventas?
-No, por ahora solo anoto algunas ventas en un cuaderno cuando me acuerdo, pero no es algo constante ni ordenado. Muchas ventas por redes sociales ni las anoto.
-¿Tienes un control de inventario?
-No exactamente. Más o menos sé cuántas fundas me quedan porque las tengo en cajas separadas por modelo, pero no tengo un número exacto ni actualizado.
-¿Sabes cuánto capital tienes invertido en mercadería?
-No con precisión. Sé más o menos cuánto gasté en el último pedido a mi proveedor, pero no llevo la cuenta acumulada de todo lo que tengo invertido en stock actualmente.
-
-Sobre ingresos y ganancias
-
-¿Sabes cuánto facturas por semana o por mes?
-Tengo una idea aproximada, pero no un número exacto porque no registro todas las ventas.
-¿Sabes cuánto es tu ganancia neta real?
-No realmente. Sé cuánto vendo más o menos, pero no resto bien los costos de envío, empaque, comisiones de la plataforma, etc. Por eso no sé si de verdad estoy ganando lo que creo.
-¿Calculas el costo por unidad antes de poner el precio?
-Solo de forma general. Sumo el precio del proveedor y le agrego un margen "a ojo", sin desglosar todos los costos (transporte, empaque, tiempo).
-¿Tienes claro tu margen de ganancia por producto?
-No en porcentaje exacto. Sé que algunas fundas dejan "más ganancia" que otras, pero no tengo el cálculo real.
-
-Sobre seguimiento y toma de decisiones
-
-¿Comparas tus ventas mes a mes?
-No, no tengo esos datos guardados para comparar, así que no sé si estoy creciendo o no.
-¿Sabes cuáles son tus productos más y menos vendidos?
-Tengo una percepción por experiencia (las fundas de diseños personalizados se venden más), pero no un dato exacto respaldado en números.
-¿Sabes cuánto necesitas reinvertir mensualmente para reponer stock?
-No tengo ese cálculo. Compro cuando veo que me estoy quedando sin stock, no de forma planificada.
-¿Separas el dinero del negocio de tu dinero personal?
-No siempre. A veces uso las ganancias para gastos personales y después me cuesta saber cuánto era realmente "del negocio".
-¿Tienes registro de gastos fijos?
-No de forma organizada. Sé que gasto en empaques, envíos y a veces en publicidad, pero no llevo una lista con montos.
 # Sistema de Control de Inventario y Ventas para Accesorios Electrónicos - "Caseritos"
 
 ## 1. Descripción del Sistema
@@ -48,7 +15,6 @@ El **Sistema de Control para Accesorios Electrónicos ("Caseritos")** es una sol
   * Selección explícita de IMEI disponible para la venta de teléfonos.
   * Disminución automática de stock e historial de transacciones según método de pago.
 
----
 
 ## 2. Suposiciones del Negocio
 
@@ -56,7 +22,47 @@ El **Sistema de Control para Accesorios Electrónicos ("Caseritos")** es una sol
 2. **Precios Variables y Descuentos por Producto:** Los productos no manejan un precio rígido de venta. Tienen un `precio_base` referencial, pero el precio final se calcula dinámicamente mediante reglas de mayoreo (`DESCUENTO_VOLUMEN`) o negociación directa, congelándose en el detalle de la venta.
 3. **Trazabilidad de Seriados (IMEI):** Toda unidad física de teléfono se registra obligatoriamente con su número de IMEI único desde su entrada (`DETALLE_COMPRA`) hasta su salida (`DETALLE_VENTA` / estado final).
 
----
+# 📋Entrevista: Control de Ventas e Inventario
+
+> Autoevaluación del estado actual del negocio en cuanto a registro de ventas, inventario, finanzas y toma de decisiones.
+
+## 📦 Ventas e Inventario
+
+| Pregunta | Respuesta | Estado |
+|---|---|---|
+| ¿Llevas un registro de tus ventas? | Se anotoa ventas en un cuaderno| ❌ Sin registro sistemático |
+| ¿Tienes un control de inventario? | Más o menos sé cuántas fundas me quedan porque las tengo en cajas separadas por modelo, pero no tengo un número exacto ni actualizado. | ⚠️ Control aproximado |
+| ¿Sabes cuánto capital tienes invertido en mercadería? | Se sabe cuanto se tiene en stock actualmente. 
+
+## 💰 Ingresos y Ganancias
+
+| Pregunta | Respuesta | Estado |
+|---|---|---|
+| ¿Sabes cuánto facturas por semana o por mes? | Se tiene un aproximado pero no un registro total de todas las ventas. | ⚠️ Estimado, no exacto |
+| ¿Sabes cuánto es tu ganancia neta real? |Se cuenta con un aproximado de la ganancia neta del valor del producto descontando los costos mas empaque 
+| ¿Calculas el costo por unidad antes de poner el precio? | Se suma los costos de transporte y gastos asumido a medida de agarrar los productos | ⚠️ Cálculo informal |
+| ¿Tienes claro tu margen de ganancia por producto? | Se conoce el margen de cada funda por no el valor total por el cierre de ventas
+
+## 📊 Seguimiento y Toma de Decisiones
+
+| Pregunta | Respuesta | Estado |
+|---|---|---|
+| ¿Comparas tus ventas mes a mes? | No tengo esos datos guardados para comparar, así que no sé si estoy creciendo o no. | ❌ Sin comparación histórica |
+| ¿Sabes cuáles son tus productos más y menos vendidos? | Tengo una percepción por experiencia, pero sin dato exacto respaldado en números. | ⚠️ Percepción, no dato |
+| ¿Sabes cuánto necesitas reinvertir mensualmente para reponer stock? | No tengo ese cálculo. Compro cuando veo que me estoy quedando sin stock, no de forma planificada. | ❌ Sin planificación |
+| ¿Separas el dinero del negocio de tu dinero personal? | No siempre. A veces uso las ganancias para gastos personales y después me cuesta saber cuánto era realmente "del negocio". | ❌ Sin separación de fondos |
+| ¿Tienes registro de gastos fijos? | No de forma organizada. Sé que gasto en empaques, envíos y a veces en publicidad, pero no llevo una lista con montos. | ❌ Sin registro de gastos |
+
+## 🚩 Resumen de brechas detectadas
+
+- [ ] No hay registro sistemático de ventas 
+- [ ] No hay inventario exacto y actualizado
+- [ ] No hay desglose de costo por unidad
+- [ ] No hay comparación de ventas mes a mes
+- [ ] No hay datos duros sobre productos más/menos vendidos
+- [ ] No hay plan de reinversión para reposición de stock
+- [ ] No hay separación entre finanzas personales y del negocio
+- [ ] No hay registro organizado de gastos fijos
 
 ## 3. Modelo de Datos (Entidades y Atributos)
 
